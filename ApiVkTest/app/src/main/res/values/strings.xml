@@ -1,4 +1,26 @@
 <resources>
     <string name="app_name">ApiVkTest</string>
+    <string name="clear">clear</string>
+    <string name="search">search</string>
+    <string name="settings">settings</string>
+    <string name="add">add</string>
+    <string name="info">info</string>
+    <string name="title1">title1</string>
+    <string name="title2">title2</string>
+    <string name="default_text">Не обработанное нажатие</string>
+    <string name="press_settings">Нажали \"Настройки\"</string>
+    <string name="navigation_drawer">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="about_developer">О разработчике</string>
+    <string name="Feedback_form">Контакты</string>
+    <string name="textView">test</string>
+    <string name="text_about_developer">О разработчике ни чего не знаю \nСкачал проэкт с github \nДобавил меню</string>
+    <string name="contacts">Telegram @berezin_vv</string>
+    <string name="todo">TODO</string>
+    <string name="test">test</string>
+    <string name="hellow">Hellow</string>
     <integer name="com_vk_sdk_AppId">6380037</integer>
 </resources>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="15dp"
@@ -14,20 +15,23 @@
         android:orientation="horizontal"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:paddingTop="10dp">
+        android:paddingTop="10dp"
+        tools:ignore="UseCompoundDrawables,UselessParent">
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="120dp"
             android:layout_height="160dp"
-            app:srcCompat="@mipmap/ic_persons" />
+            app:srcCompat="@mipmap/ic_persons"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/tView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:hint="test"
+            android:layout_marginStart="15dp"
+            android:text="@string/textView"
+            android:hint="@string/test"
             android:textSize="16sp" />
 
     </LinearLayout>
