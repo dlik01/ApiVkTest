@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -72,11 +75,8 @@ public class MainActivity extends AppCompatActivity
         ImageLoader.getInstance().init(config);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//            Objects.requireNonNull(getSupportActionBar()).setTitle("My custom toolbar!");
-//        }
-//        setSupportActionBar(toolbar);
-//        toolbar.setTitle(R.string.hellow);
         setupNavigationDrawer(toolbar);
+
         //подготавливаем переменные для уведомлений
         Intent notificationIntent = new Intent(this, MainActivity.class);
         final PendingIntent contentIntent = PendingIntent.getActivity(this,0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
@@ -151,12 +151,13 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        setContentView(R.layout.activity_main);
 
+//        setContentView(R.layout.activitymain);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         registerForContextMenu(findViewById(R.id.listView));
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -167,18 +168,24 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         if (id == R.id.main) {
             Toast.makeText(this, R.string.text_about_developer, Toast.LENGTH_SHORT).show();
+            FragmentDev fragment = new FragmentDev();
+            transaction.replace(R.id.fragmentDev,fragment );
         } else if (id == R.id.contacts) {
             Toast.makeText(this, R.string.contacts, Toast.LENGTH_SHORT).show();
+            FragmentContacts fragment = new FragmentContacts();
+            transaction.replace(R.id.fragmentDev,fragment );
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+        transaction.commit();
         return true;
     }
 

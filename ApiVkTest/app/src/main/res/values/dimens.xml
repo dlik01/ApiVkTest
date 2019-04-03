@@ -2,4 +2,5 @@
 <resources>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="activity_margin">16dp</dimen>
+    <dimen name="size">16dp</dimen>
 </resources>

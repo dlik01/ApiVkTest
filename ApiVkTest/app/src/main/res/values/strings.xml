@@ -22,5 +22,7 @@
     <string name="todo">TODO</string>
     <string name="test">test</string>
     <string name="hellow">Hellow</string>
+    <string name="telegram_contact">Telegramm: @berezin_vv</string>
+    <string name="frm_dev">Проект спер с гитхаба, добавил меню.  вроде работает нормально</string>
     <integer name="com_vk_sdk_AppId">6380037</integer>
 </resources>
